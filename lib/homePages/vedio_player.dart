@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
 class VedioPlayer extends StatefulWidget {
-  const VedioPlayer({super.key});
+  final vedioId;
+  const VedioPlayer({Key? key, this.vedioId}) : super(key: key);
 
   @override
   State<VedioPlayer> createState() => _VedioPlayerState();
@@ -18,7 +19,7 @@ class _VedioPlayerState extends State<VedioPlayer> {
     // final vedioID =
     //     "https://www.youtube.com/watch?v=oV7jjQCxFU8";
     final vedioID =
-        YoutubePlayer.convertUrlToId("https://youtu.be/8deZSmo7vWs");
+        YoutubePlayer.convertUrlToId(widget.vedioId.toString())!;
     _controller = YoutubePlayerController(
         initialVideoId: vedioID!,
         flags: const YoutubePlayerFlags(

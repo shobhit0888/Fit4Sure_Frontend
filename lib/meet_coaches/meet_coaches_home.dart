@@ -1,53 +1,27 @@
-import 'package:fit4sure/clientDashboard/info_page.dart';
-import 'package:fit4sure/drawer/myDrawer.dart';
-import 'package:fit4sure/clientDashboard/plans_widget.dart';
-import 'package:fit4sure/clientDashboard/timeline_page.dart';
+import 'package:fit4sure/meet_coaches/developers_page.dart';
+import 'package:fit4sure/meet_coaches/managers_page.dart';
+import 'package:fit4sure/meet_coaches/trainers_page.dart';
 import 'package:flutter/material.dart';
 
-class ProfilePage extends StatefulWidget {
-  const ProfilePage({super.key});
+class MeetCoachesPage extends StatefulWidget {
+  const MeetCoachesPage({super.key});
 
   @override
-  State<ProfilePage> createState() => _ProfilePageState();
+  State<MeetCoachesPage> createState() => _MeetCoachesPageState();
 }
 
-class _ProfilePageState extends State<ProfilePage> {
+class _MeetCoachesPageState extends State<MeetCoachesPage> {
   int currentIndex = 0;
-  final screens = [
-    TimelinePage(),
-    PlansPage(),
-    UserInfoPage(),
-  ];
+  final screens = [TrainnersPage(), ManagersPage(), DevelopersPage()];
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
-      appBar: AppBar(
-        leading: IconButton(
-          onPressed: () {
-            Scaffold.of(context).openDrawer();
-          },
-          tooltip: MaterialLocalizations.of(context).openAppDrawerTooltip,
-          icon: Icon(
-            Icons.arrow_forward,
-            color: Colors.white,
-          ),
-        ),
-        backgroundColor: Colors.black,
-        title: Text(
-          "Your Profile",
-          style: TextStyle(
-              color: Colors.white, fontSize: 20, fontWeight: FontWeight.w500),
-        ),
-        centerTitle: true,
-        automaticallyImplyLeading: false,
-      ),
-      drawer: const MyDrawer(),
       body: SingleChildScrollView(
         child: Column(
           children: [
             Container(
-              height: 200,
+              height: 100,
               width: MediaQuery.of(context).size.width,
               decoration: BoxDecoration(
                 color: Colors.black,
@@ -58,44 +32,53 @@ class _ProfilePageState extends State<ProfilePage> {
                 ),
               ),
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Center(
-                    child: Container(
-                      height: 160,
-                      child: const CircleAvatar(
-                        radius: 60,
-                        backgroundImage: AssetImage(
-                          'images/Banner.png',
-                        ),
-                      ),
-                    ),
+                  SizedBox(
+                    height: 50,
                   ),
-                  Center(
-                    child: Text(
-                      "Pratik Shah",
-                      style: TextStyle(
+                  Row(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(left: 28.0),
+                        child: Text("Meet our Team",
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold)),
+                      ),
+                      SizedBox(
+                        width: 150,
+                      ),
+                      IconButton(
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
+                        icon: Icon(
+                          Icons.cancel_outlined,
                           color: Colors.white,
-                          fontSize: 20,
-                          fontWeight: FontWeight.w500),
-                    ),
+                        ),
+                      )
+                    ],
                   ),
                 ],
               ),
             ),
             SizedBox(
-              height: 5,
+              height: 20,
             ),
             Container(
               margin: EdgeInsets.all(20),
               height: size.width * .15,
               decoration: BoxDecoration(
                 color: Colors.black,
+                
                 borderRadius: BorderRadius.circular(50),
               ),
               child: ListView.builder(
                 itemCount: 3,
                 scrollDirection: Axis.horizontal,
-                // padding: EdgeInsets.symmetric(horizontal: size.width * .14),
+                
                 padding: EdgeInsets.only(
                     left: size.width * .04,
                     right: MediaQuery.of(context).size.width * .14),
@@ -117,7 +100,7 @@ class _ProfilePageState extends State<ProfilePage> {
                         duration: Duration(milliseconds: 150),
                         curve: Curves.fastOutSlowIn,
                         margin: EdgeInsets.only(
-                          // bottom: index == currentIndex ? 0 : size.width * .029,
+                          
                           right: size.width * .0233,
                           left: size.width * .0233,
                         ),
@@ -157,11 +140,5 @@ class _ProfilePageState extends State<ProfilePage> {
     );
   }
 
-  List<String> listOfTabs = ["Timeline", "Plans", "Info"];
-  // List<IconData> listOfIcons = [
-  //   Icons.home_rounded,
-  //   Icons.explore,
-  //   Icons.analytics_rounded,
-  //   Icons.person_rounded,
-  // ];
+  List<String> listOfTabs = ["Trainers", "Managers", "Developers"];
 }

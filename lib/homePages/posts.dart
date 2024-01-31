@@ -96,7 +96,7 @@ class _PostListState extends State<PostList> {
             bottomLeft: Radius.circular(30),
           ),
           // borderRadius: BorderRadius.circular(20),
-          color: Color(0xffF6CFCF),
+          color: Colors.grey,
         ),
         height: 200,
         child: PageView.builder(

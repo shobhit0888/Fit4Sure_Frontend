@@ -1,3 +1,4 @@
+import 'package:fit4sure/clientDashboard/edit_info.dart';
 import 'package:flutter/material.dart';
 
 class UserInfoPage extends StatefulWidget {
@@ -77,6 +78,26 @@ class _UserInfoPageState extends State<UserInfoPage> {
           Padding(
             padding: const EdgeInsets.only(left: 28.0),
             child: Text("Coach:                   Shobhit Gupta"),
+          ),
+          SizedBox(
+            height: 10,
+          ),
+          Padding(
+            padding: const EdgeInsets.only(left: 270.0),
+            child: ElevatedButton(
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (c) => EditProfilePage()));
+              },
+              child: Text("Edit"),
+              style: ElevatedButton.styleFrom(
+                primary: Colors.black,
+                onPrimary: Colors.white,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(32.0),
+                ),
+              ),
+            ),
           ),
           SizedBox(
             height: 10,

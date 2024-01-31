@@ -12,7 +12,7 @@ import '../widgets/custom_text_field.dart';
 
 class OtpVerification extends StatefulWidget {
   String? phoneNumber;
-  OtpVerification({super.key, this.phoneNumber});
+  // OtpVerification({super.key, this.phoneNumber});
 
   @override
   State<OtpVerification> createState() => _OtpVerificationState();
@@ -143,7 +143,13 @@ class _OtpVerificationState extends State<OtpVerification> {
               ),
               ElevatedButton(
                 onPressed: () {
-                  sendDataToBackend();
+                  // sendDataToBackend();
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return EntryPage(
+                      currentIndex: 0,
+                      token: "",
+                    );
+                  }));
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.black,

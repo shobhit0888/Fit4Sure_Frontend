@@ -17,7 +17,7 @@ class _PlansPageState extends State<PlansPage> {
           child: Column(
             children: [
               SizedBox(
-                height: 25,
+                height: 35,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,

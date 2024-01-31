@@ -16,7 +16,7 @@ class _AnalyticsPlansPageState extends State<AnalyticsPlansPage> {
     return Column(
       children: [
         SizedBox(
-          height: 25,
+          height: 65,
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -39,10 +39,7 @@ class _AnalyticsPlansPageState extends State<AnalyticsPlansPage> {
               width: 70,
             ),
             Padding(
-              padding: const EdgeInsets.only(
-                left: 4.0,
-                bottom: 15,
-              ),
+              padding: const EdgeInsets.only(left: 4.0, bottom: 15, top: 60),
               child: Container(
                 height: 65,
                 child: CircleAvatar(

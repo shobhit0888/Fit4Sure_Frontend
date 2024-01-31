@@ -54,7 +54,7 @@ class _PersonalInfoForSignUpState extends State<PersonalInfoForSignUp> {
     if (response.statusCode == 200) {
       final Map<String, dynamic> responseData = json.decode(response.body);
       final String myToken = responseData['token'];
-     
+
       print('Data sent successfully');
       print(response.body);
       Navigator.pop(context);
@@ -203,7 +203,15 @@ class _PersonalInfoForSignUpState extends State<PersonalInfoForSignUp> {
               ),
               ElevatedButton(
                 onPressed: () {
-                  sendDataToBackend();
+                  // sendDataToBackend();
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => EntryPage(
+                              token: "",
+                              currentIndex: 0,
+                            )),
+                  );
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.black,

@@ -1,4 +1,5 @@
 import 'package:fit4sure/analytics/analytics.dart';
+import 'package:fit4sure/clientDashboard/profile_page.dart';
 import 'package:fit4sure/coaches/coach_start_page.dart';
 import 'package:fit4sure/communityPages/community_page.dart';
 import 'package:fit4sure/homePages/home_page.dart';
@@ -27,7 +28,7 @@ class _EntryPageState extends State<EntryPage> {
     AnalyticsPage(
       index: 0,
     ),
-    CoachStartPage(),
+    ProfilePage(),
   ];
   // RiveAsset selectedBottomNav = bottomNavs.first;
 
@@ -39,10 +40,10 @@ class _EntryPageState extends State<EntryPage> {
       extendBody: true,
       body: screens[widget.currentIndex!],
       bottomNavigationBar: Container(
-        margin: EdgeInsets.all(20),
+        margin: const EdgeInsets.all(20),
         height: size.width * .15,
         decoration: BoxDecoration(
-          color: Colors.black,
+          color: Colors.grey[600],
           // boxShadow: [
           //   BoxShadow(
           //     color: Colors.black.withOpacity(.15),
@@ -82,16 +83,16 @@ class _EntryPageState extends State<EntryPage> {
                   height: size.width * .085,
                   decoration: BoxDecoration(
                     color: index == widget.currentIndex!
-                        ? Color(0xffBBF246)
-                        : Colors.black,
+                        ? Colors.black
+                        : Colors.grey[300],
                     borderRadius: BorderRadius.circular(50),
                   ),
                   child: Icon(
                     listOfIcons[index],
                     size: size.width * .066,
                     color: index == widget.currentIndex!
-                        ? Colors.black
-                        : Colors.white,
+                        ? Color(0xffFF592C)
+                        : Colors.grey[600],
                   ),
                 ),
                 SizedBox(height: size.width * .03),

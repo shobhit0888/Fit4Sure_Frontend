@@ -33,13 +33,13 @@ class _ContactNumberSignUpState extends State<ContactNumberSignUp> {
 
     if (response.statusCode == 200) {
       print('Data sent successfully');
-      Navigator.push(
-        context,
-        MaterialPageRoute(
-            builder: (context) => OtpVerificationSignUp(
-                  phoneNumber: "+91${contactNumberController.text}",
-                )),
-      );
+      // Navigator.push(
+      //   context,
+      //   MaterialPageRoute(
+      //       builder: (context) => OtpVerificationSignUp(
+      //             phoneNumber: "+91${contactNumberController.text}",
+      //           )),
+      // );
     } else {
       print('Failed to send data. Error code: ${response.statusCode}');
     }
@@ -140,12 +140,12 @@ class _ContactNumberSignUpState extends State<ContactNumberSignUp> {
               ),
               ElevatedButton(
                 onPressed: () {
-                  // Navigator.push(
-                  //   context,
-                  //   MaterialPageRoute(
-                  //       builder: (context) => OtpVerificationSignUp()),
-                  // );
-                  sendDataToBackend();
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => OtpVerificationSignUp()),
+                  );
+                  // sendDataToBackend();
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.black,

@@ -47,7 +47,7 @@ class _AnalyticsHomePageState extends State<AnalyticsHomePage> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const Padding(
-                padding: const EdgeInsets.only(left: 28.0, top: 20),
+                padding: const EdgeInsets.only(left: 28.0, top: 50),
                 child: Text(
                   "November 2023",
                   style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),

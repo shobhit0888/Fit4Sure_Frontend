@@ -139,12 +139,12 @@ class _OtpVerificationSignUpState extends State<OtpVerificationSignUp> {
               ),
               ElevatedButton(
                 onPressed: () {
-                  sendDataToBackend();
-                  // Navigator.push(
-                  //   context,
-                  //   MaterialPageRoute(
-                  //       builder: (context) => PersonalInfoForSignUp()),
-                  // );
+                  // sendDataToBackend();
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => PersonalInfoForSignUp()),
+                  );
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.black,
